@@ -6178,11 +6178,11 @@ vObjP = position; vONrm = normal; vWNrm = normalize(mat3(modelMatrix) * normal);
       </header>
       <div class="panel-b about-copy" data-pane="about" hidden>
         <h3>盐线行动 · jifeng 改编</h3>
-        <p>本作基于浏览器 FPS Demo <strong>《Saltline》</strong>的中文流传版本改编。原作是一场雨天港区突围：切断三处中继，对抗机械守卫，最后登船撤离。</p>
-        <p>据公开源码镜像的来源说明，原作由 <strong>Felix Rieseberg（Anthropic）</strong>发起，使用 Claude Fable 5.2 生成。原作的场景、材质、音效与主要战斗系统归功于原作开发流程；本版本不宣称从零自研或商业 3A 制作。</p>
-        <p><strong>jifeng 改编内容：</strong>整理中文界面、替换流传版标识与宣传文案；针对切断中继时松键或短暂转身导致进度迅速丢失的问题，增加 650 毫秒中断宽容，随后以每秒 35% 缓慢回退，并显示进度、剩余时间和当前状态。</p>
-        <p>这是用于学习程序化资产和交互反馈的小型 FPS 改编实验。完整开发耗时、Token 用量与成本未作独立核实，未作为本作成果宣传。</p>
-        <p class="source-links"><a href="https://claude.ai/artifact/BGY1SztrAYcJQHSsnHHGmp" target="_blank" rel="noopener noreferrer">Saltline 原始试玩</a> · <a href="https://x.com/felixrieseberg/status/2119925633564463609" target="_blank" rel="noopener noreferrer">原作者发布链接</a> · <a href="https://github.com/realcodebear/saltline-fable-5.2" target="_blank" rel="noopener noreferrer">源码镜像（非原作者仓库）</a></p>
+        <p><strong>jifeng｜玩法体验设计与 AI 辅助实现</strong><br>围绕“交战压力下，任务交互怎样既有紧张感、又不因误操作惩罚玩家”这一问题，对港区突围 FPS 做了一次可试玩的体验迭代。</p>
+        <p><strong>我解决的痛点：</strong>切断中继需要按住交互键 2.4 秒，松键或短暂转身就会迅速丢失进度。玩家为了观察敌情而中断任务，也容易被迫重新读条。</p>
+        <p><strong>我的设计与实现：</strong>保留 2.4 秒任务投入，加入 650 毫秒中断宽容；超时后以每秒 35 个百分点回退，重新交互可从现有进度继续。提示同步显示百分比、剩余时间，以及“进度暂存／进度回退”状态，让玩家清楚知道操作结果。</p>
+        <p><strong>交付与验证：</strong>借助 AI 完成逻辑修改、中文界面与项目展示整理；以 6 项自动化测试覆盖中断恢复、帧步长、进度边界和完成事件，完成浏览器启动验证及 GitHub Pages 在线部署。当前是可体验的单场景迭代，尚未进行玩家量化对照测试。</p>
+        <p class="source-links"><strong>改编来源：</strong>基于《Saltline》中文流传版本。原作场景、材质、音效和主要战斗系统沿用；据公开镜像说明，原作由 Felix Rieseberg 发起，使用 Claude 生成。<br><a href="https://claude.ai/artifact/BGY1SztrAYcJQHSsnHHGmp" target="_blank" rel="noopener noreferrer">原始试玩</a> · <a href="https://x.com/felixrieseberg/status/2119925633564463609" target="_blank" rel="noopener noreferrer">作者发布</a> · <a href="https://github.com/realcodebear/saltline-fable-5.2" target="_blank" rel="noopener noreferrer">源码镜像</a></p>
       </div>
       <div class="panel-b" data-pane="settings">
         <div class="row"><label id="l-q">画面质量</label>
